@@ -1,5 +1,7 @@
 // 日期格式化
-export function formatDate(date, fmt) {
+export function formatDate(time, fmt) {
+  let date = new Date(time);
+
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
   }
@@ -19,6 +21,14 @@ export function formatDate(date, fmt) {
   return fmt;
 };
 
-function padLeftZero (str) {
+function padLeftZero(str) {
   return ('00' + str).substr(str.length);
 };
+
+export function formatMonthDay(time) {
+  return formatDate(time, "MM月dd日");
+}
+
+export function formatMinuteSecond(time) {
+  return formatDate(time, "mm:ss");
+}
