@@ -6,6 +6,6 @@ export default function handleDownload() {
   a.download = filename;
   a.href = blobUrl;
   a.click();
-  URL.removeObjectURL(blobUrl);
+  URL.revokeObjectURL(blobUrl);
 }
 
