@@ -9,8 +9,8 @@ function formatFileSize(size, pointLength, units) {
   if(!size || isNaN(size)) {
     return "0B";
   }
-  
-  let unit = units || [ 'B', 'K', 'M', 'G', 'TB' ];
+  let unit;
+  units = units || [ 'B', 'K', 'M', 'G', 'TB' ];
   while ((unit = units.shift()) && size > 1024 ) {
       size = size / 1024;
   }
