@@ -6,7 +6,7 @@
  *                如果单位数组里面只指定了到了K(千字节)，同时文件大小大于M, 此方法的输出将还是显示成多少K.
  */
 function formatFileSize(size, pointLength, units) {
-  if(!size || isNaN(size)) {
+  if (!size || isNaN(size) || Number(size) === 0) {
     return "0B";
   }
   let unit;
